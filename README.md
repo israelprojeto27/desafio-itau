@@ -20,6 +20,7 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 
 * Artefato Repositório
 * Tecnologias
+* Práticas Desenvolvimento
 * Iniciando ...
 * Endpoints
 * Swagger
@@ -37,6 +38,13 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 * Spring Boot 2.6.6
 * Java 11
 * JUnit
+* Heroku
+
+### Práticas Desenvolvimento
+
+* Clean Code
+* SOLID
+
 
 
 ### Iniciando ...
@@ -87,7 +95,12 @@ Para a ilustração dos endpoints a seguir vai ser utilizado o termo <BASE_URL> 
 
 Foi realizado um deploy desta API no ambiente de cloud do Heroku. O serviço em questão poderá ser acessado a partir da URL: `https://desafio-itau-api.herokuapp.com`.
 
-Segue um exemplo de chamada a um endpoint para validar se a API está funcionando:  _https://desafio-itau-api.herokuapp.com/password/validate_
+Segue um exemplo de um cUrl para fazer chamada ao endpoint para validar se a API está funcionando:  
+* curl --location --request POST 'https://desafio-itau-api.herokuapp.com/password/validate' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "input": "Aabv#12P3O"
+  }'
 
 
 ### Container
