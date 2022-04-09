@@ -18,7 +18,7 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 
 ### Glossário
 
-* Artefatos Repositório
+* Artefato Repositório
 * Tecnologias
 * Iniciando ...
 * Endpoints
@@ -28,7 +28,7 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 * Container
 * Autor
 
-### Artefatos Repositorio
+### Artefato Repositorio
 
 * desafio-itau (artefato da API)
 
@@ -71,9 +71,16 @@ Para a ilustração dos endpoints a seguir vai ser utilizado o termo <BASE_URL> 
 
 * Enviar um input de password para validação:
     * `<BASE_URL>/password/validate`
+      * Método requisição Http: POST.  
       * Vale ressaltar que para o funcionamento deste endpoint é necessário um Body na requisição no formato JSON.
       * Exemplo do body:
         * _{"input": "Aabv#12P3Oa"}_
+      * Exemplo cUrl para realizar a requisição:
+        * _curl --location --request POST 'http://localhost:8080/password/validate' \
+          --header 'Content-Type: application/json' \
+          --data-raw '{
+          "input": "Aabv#12P3Oa"
+          }' 
 
 
 ### Heroku
