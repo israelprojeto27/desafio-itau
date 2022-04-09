@@ -41,52 +41,46 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 
 ### Iniciando ...
 
-* Fazendo o download dos 2 artefatos:
-    * `git clone https://israeldias@bitbucket.org/israeldias/backendjavaplenoisraelbarreto.git`
+* Fazendo o download do artefato:
+    * `git clone https://github.com/israelprojeto27/desafio-itau`
 
 * Acessando diretório:
-    - `cd backendjavaplenoisraelbarreto`
+    - `cd desafio-itau`
 
-A partir do diretório informado será possível acessar todo o código-fonte dos 2 artefatos mencionados.
-
+A partir do diretório informado será possível acessar todo o código-fonte do referido artefato.
 
 
 ### Swagger
 
-Dentro do projeto da API `desafio-itau` foi criado o documento `swagger.yaml` que contém as informações de todos os principais endpoins da API, permitindo acessar de forma visual todas essas informações
+Dentro do projeto da API `desafio-itau` é possível acessar o documento Swagger da aplicação que contém as informações do endpoint implementado para esta API.
+
+Este documento poderá ser acessado através de qualquer browser através da seguinte URL:
+  * http://localhost:8080/swagger-ui/index.html
 
 
 ### Postman
 
-Dentro do projeto, há também o arquivo JSON `Mobicare.postman_collection.json` que possui também todas as informações de todos os endpoinst construidos nesta API.
+Dentro do projeto, há também o arquivo JSON `DesafioItau.postman_collection.json` que possui também todas as informações de todos os endpoinst construidos nesta API.
 
 
 ### Endpoints
 
-Para esta API foi construída alguns endpoints que vão permitir obter e cadastrar informações de Colaboradores em determinados Setores de uma empresa.
+Para esta API foi construída apenas um endpoint que será responsável para referida validação sobre o password informado,
 
 Para a ilustração dos endpoints a seguir vai ser utilizado o termo <BASE_URL> apenas para designar, de forma genérica, a URL do servidor onde está deployada a API.
 
-* Busca de um colaborador pelo seu ID:
-    * `<BASE_URL>/colaborador/buscarColaborador/{idColaborador}`
-
-* Cadastrar um novo colaborador:
-    * `<BASE_URL>/colaborador/inserir`
-
-* Remover um colaborador pelo seu ID:
-    * `<BASE_URL>/colaborador/remover/{idColaborador}`
-
-* Buscar todos os colaboradores a partir de um ID setor:
-    * `<BASE_URL>/setor/listarColaboradoresPorSetorId/{idSetor}`
-
+* Enviar um input de password para validação:
+    * `<BASE_URL>/password/validate`
+      * Vale ressaltar que para o funcionamento deste endpoint é necessário um Body na requisição no formato JSON.
+      * Exemplo do body:
+        * _{"input": "Aabv#12P3Oa"}_
 
 
 ### Heroku
 
-Foi realizado um deploy desta API no ambiente de cloud do Heroku. O serviço em questão poderá ser acessado a partir da URL: `https://mobicare-colaboradores-api.herokuapp.com`.
+Foi realizado um deploy desta API no ambiente de cloud do Heroku. O serviço em questão poderá ser acessado a partir da URL: `https://desafio-itau-api.herokuapp.com`.
 
-Segue um exemplo de chamada a um endpoint para validar se a API está funcionando:  _https://mobicare-colaboradores-api.herokuapp.com/colaborador/buscarColaborador/1_
-
+Segue um exemplo de chamada a um endpoint para validar se a API está funcionando:  _https://desafio-itau-api.herokuapp.com/password/validate_
 
 
 ### Container
@@ -95,36 +89,19 @@ Para esta API foi construída um container Docker para que a mesma pudesse ser e
 
 Para criação do container Docker e a devida execução, os seguintes passos podem ser executados:
 
-- Acesse o diretório do projeto da API mobicare:
-    - `cd mobicare`
+- Acesse o diretório do projeto da API Desafio Itaú:
+    - `cd desafio-itau`
 
 - Para a criação do image docker:
-    - `docker build -t img/mobicare .`
+    - `docker build -t img/desafio-itau .`
 
 - Dando um start no container:
-    - `docker run -p: 8080:8080 img/mobicare`
+    - `docker run -p 8080:8080 img/desafio-itau`
 
 - Para checar se está funcionando o container:
-    - _http://localhost:8080/colaborador/buscarColaborador/1_
+    - http://localhost:8080/password/validate
 
 
-### Sistema Web
-
-Para uma simples exibição de forma mais ilustrativa da API, foi construída um pequeno e simples sistema Web desenvolvido em NextJs.
-
-Para a execução desta aplicação Web, os seguintes passos podem ser seguidos:
-
-- Acesse o diretorio do sistema Web:
-    - `cd mobicare-web`
-
-- Baixe as dependencias da aplicação:
-    - `npm install`
-
-- Rode a aplicação com o seguinte comando:
-    - `npm run dev`
-
-- A aplicação poderá ser acessada através da seguinte URL:
-    - `http://localhost:3000`
 
 
 
