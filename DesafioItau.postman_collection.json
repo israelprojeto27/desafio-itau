@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "fb09ed16-cfa9-41aa-87c0-2830cde51737",
+		"name": "Desafio Itau",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chamada Local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"Aabv#12P3Oa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/password/validate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"password",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chamada Heroku",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"Aabv#12P3O\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://desafio-itau-api.herokuapp.com/password/validate",
+					"protocol": "https",
+					"host": [
+						"desafio-itau-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"password",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

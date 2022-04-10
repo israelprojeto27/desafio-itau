@@ -23,10 +23,11 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 * Práticas Desenvolvimento
 * Iniciando ...
 * Endpoints
-* Swagger
-* Postman
-* Heroku
 * Container
+* Heroku
+* Swagger
+* Teste Interface API Web
+* Postman
 * Autor
 
 ### Artefato Repositorio
@@ -39,6 +40,7 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 * Java 11
 * JUnit
 * Heroku
+* Intellij
 
 ### Práticas Desenvolvimento
 
@@ -58,49 +60,24 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 A partir do diretório informado será possível acessar todo o código-fonte do referido artefato.
 
 
-### Swagger
-
-Dentro do projeto da API `desafio-itau` é possível acessar o documento Swagger da aplicação que contém as informações do endpoint implementado para esta API.
-
-Este documento poderá ser acessado através de qualquer browser através da seguinte URL:
-  * http://localhost:8080/swagger-ui/index.html
-
-
-### Postman
-
-Dentro do projeto, há também o arquivo JSON `DesafioItau.postman_collection.json` que possui também todas as informações de todos os endpoinst construidos nesta API.
-
-
 ### Endpoints
 
 Para esta API foi construída apenas um endpoint que será responsável para referida validação sobre o password informado,
 
-Para a ilustração dos endpoints a seguir vai ser utilizado o termo <BASE_URL> apenas para designar, de forma genérica, a URL do servidor onde está deployada a API.
+Para a ilustração do endpoint a seguir, vai ser utilizado o termo <BASE_URL> apenas para designar, de forma genérica, a URL do servidor onde está deployada a API.
 
 * Enviar um input de password para validação:
-    * `<BASE_URL>/password/validate`
-      * Método requisição Http: POST.  
-      * Vale ressaltar que para o funcionamento deste endpoint é necessário um Body na requisição no formato JSON.
-      * Exemplo do body:
-        * _{"input": "Aabv#12P3Oa"}_
-      * Exemplo cUrl para realizar a requisição:
-        * _curl --location --request POST 'http://localhost:8080/password/validate' \
-          --header 'Content-Type: application/json' \
-          --data-raw '{
-          "input": "Aabv#12P3Oa"
-          }' 
-
-
-### Heroku
-
-Foi realizado um deploy desta API no ambiente de cloud do Heroku. O serviço em questão poderá ser acessado a partir da URL: `https://desafio-itau-api.herokuapp.com`.
-
-Segue um exemplo de um cUrl para fazer chamada ao endpoint para validar se a API está funcionando:  
-* curl --location --request POST 'https://desafio-itau-api.herokuapp.com/password/validate' \
-  --header 'Content-Type: application/json' \
-  --data-raw '{
-  "input": "Aabv#12P3O"
-  }'
+  * `<BASE_URL>/password/validate`
+    * Método requisição Http: POST.
+    * Vale ressaltar que para o funcionamento deste endpoint é necessário um Body na requisição no formato JSON.
+    * Exemplo do body:
+      * _{"input": "Aabv#12P3Oa"}_
+    * Exemplo cUrl para realizar a requisição:
+      * curl --location --request POST 'http://localhost:8080/password/validate' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+        "input": "Aabv#12P3Oa"
+        }'
 
 
 ### Container
@@ -110,17 +87,56 @@ Para esta API foi construída um container Docker para que a mesma pudesse ser e
 Para criação do container Docker e a devida execução, os seguintes passos podem ser executados:
 
 - Acesse o diretório do projeto da API Desafio Itaú:
-    - `cd desafio-itau`
+  - `cd desafio-itau`
 
 - Para a criação do image docker:
-    - `docker build -t img/desafio-itau .`
+  - `docker build -t img/desafio-itau .`
 
 - Dando um start no container:
-    - `docker run -p 8080:8080 img/desafio-itau`
+  - `docker run -p 8080:8080 img/desafio-itau`
 
 - Para checar se está funcionando o container:
-    - http://localhost:8080/password/validate
+  - http://localhost:8080/password/validate
+  
 
+
+### Heroku
+
+Foi realizado um deploy desta API no ambiente de cloud do Heroku. O serviço em questão poderá ser acessado a partir da URL: `https://desafio-itau-api.herokuapp.com`.
+
+Segue um exemplo de um cUrl para fazer chamada ao endpoint para validar se a API está funcionando:
+* curl --location --request POST 'https://desafio-itau-api.herokuapp.com/password/validate' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "input": "Aabv#12P3O"
+  }'
+  
+
+### Swagger
+
+Dentro do projeto da API `desafio-itau` é possível acessar o documento Swagger da aplicação que contém as informações do endpoint implementado para esta API.
+
+Quando a aplicação for iniciada localmente, este documento poderá ser acessado através através da seguinte URL:
+  * http://localhost:8080/swagger-ui/index.html
+
+O arquivo swagger também poderá ser acessado através da seguinte URL a partir do Heroku:
+ * https://desafio-itau-api.herokuapp.com/swagger-ui/index.html
+
+
+
+### Teste Interface API Web
+
+Para esta API foi criada uma interface Web simples implementada em Nextjs que pode ser usada para realizar alguns testes sobre a API que foi deployada no Heroku.
+
+Trata-se de um pequeno sistema web, sem muita preocupação com a questão do UX e estilizações, composto basicamente de input para o usuário informa uma entrada de caracteres, um label para informar o retorno da API e o botão Validar.
+
+A interface web poderá ser acessada através da seguinte URL:
+  * https://desafio-itau-6wuzi6d1h-israelprojeto27.vercel.app/
+
+
+### Postman
+
+Dentro do projeto, há também o arquivo JSON `DesafioItau.postman_collection.json` que possui também todas as informações de todos os endpoinst construidos nesta API.
 
 
 
