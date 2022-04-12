@@ -62,9 +62,9 @@ A partir do diretório informado será possível acessar todo o código-fonte do
 
 ### Endpoints
 
-Para esta API foi construída apenas um endpoint que será responsável para referida validação sobre o password informado,
+Para esta API foi construída apenas um endpoint que será responsável para referida validação sobre o password informado.
 
-Para a ilustração do endpoint a seguir, vai ser utilizado o termo <BASE_URL> apenas para designar, de forma genérica, a URL do servidor onde está deployada a API.
+Para a ilustração do endpoint a seguir, vai ser utilizado o termo <BASE_URL> apenas para designar, de forma genérica, a URL do servidor onde está deployada a API, podendo ser por `http://localhost:8080`.
 
 * Enviar um input de password para validação:
   * `<BASE_URL>/password/validate`
@@ -82,7 +82,7 @@ Para a ilustração do endpoint a seguir, vai ser utilizado o termo <BASE_URL> a
 
 ### Container
 
-Para esta API foi construída um container Docker para que a mesma pudesse ser executada e assim testes pudessem ser realizados.
+Para esta API foi construída um container Docker para que esta API pudesse ser executada e assim testes pudessem ser realizados.
 
 Para criação do container Docker e a devida execução, os seguintes passos podem ser executados:
 
@@ -128,7 +128,7 @@ O arquivo swagger também poderá ser acessado através da seguinte URL a partir
 
 Para esta API foi criada uma interface Web simples implementada em Nextjs que pode ser usada para realizar alguns testes sobre a API que foi deployada no Heroku.
 
-Trata-se de um pequeno sistema web, sem muita preocupação com a questão do UX e estilizações, composto basicamente de input para o usuário informa uma entrada de caracteres, um label para informar o retorno da API e o botão Validar.
+Trata-se de um pequeno sistema web, sem muita preocupação com a questão do UX e estilizações, composto basicamente de input para o usuário informar uma entrada de caracteres, um label para informar o retorno da API e o botão Validar.
 
 A interface web poderá ser acessada através da seguinte URL:
   * https://desafio-itau-6wuzi6d1h-israelprojeto27.vercel.app/
