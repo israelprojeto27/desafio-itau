@@ -16,7 +16,7 @@ O projeto trata-se de uma API Rest que possui o objetivo de validar um password,
 
 E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' considerando respectivamente se o password informado é válido ou não. 
 
-### Glossário
+## Glossário
 
 * Artefato Repositório
 * Tecnologias
@@ -30,11 +30,11 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 * Postman
 * Autor
 
-### Artefato Repositorio
+## Artefato Repositorio
 
 * desafio-itau (artefato da API)
 
-### Tecnologias
+## Tecnologias
 
 * Spring Boot 2.6.6
 * Java 11
@@ -42,14 +42,14 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 * Heroku
 * Intellij
 
-### Práticas Desenvolvimento
+## Práticas Desenvolvimento
 
 * Clean Code
 * SOLID
 
 
 
-### Iniciando ...
+## Iniciando ...
 
 * Fazendo o download do artefato:
     * `git clone https://github.com/israelprojeto27/desafio-itau`
@@ -60,7 +60,7 @@ E esta API deverá emitir apenas uma resposta booleana 'true' ou 'false' conside
 A partir do diretório informado será possível acessar todo o código-fonte do referido artefato.
 
 
-### Endpoints
+## Endpoints
 
 Para esta API foi construída apenas um endpoint que será responsável para referida validação sobre o password informado.
 
@@ -71,16 +71,17 @@ Para a ilustração do endpoint a seguir, vai ser utilizado o termo <BASE_URL> a
     * Método requisição Http: POST.
     * Vale ressaltar que para o funcionamento deste endpoint é necessário um Body na requisição no formato JSON.
     * Exemplo do body:
-      * _{"input": "Aabv#12P3Oa"}_
+      * `{"input": "Aabv#12P3Oa"}`
     * Exemplo cUrl para realizar a requisição:
-      * curl --location --request POST 'http://localhost:8080/password/validate' \
+```shell script  
+       curl --location --request POST 'http://localhost:8080/password/validate' \
         --header 'Content-Type: application/json' \
         --data-raw '{
         "input": "Aabv#12P3Oa"
         }'
+```  
 
-
-### Container
+## Container
 
 Para esta API foi construída um container Docker para que esta API pudesse ser executada e assim testes pudessem ser realizados.
 
@@ -96,23 +97,24 @@ Para criação do container Docker e a devida execução, os seguintes passos po
   - `docker run -p 8080:8080 img/desafio-itau`
 
 - Para checar se está funcionando o container:
-  - http://localhost:8080/password/validate
+  - `http://localhost:8080/password/validate`
   
 
 
-### Heroku
+## Heroku
 
 Foi realizado um deploy desta API no ambiente de cloud do Heroku. O serviço em questão poderá ser acessado a partir da URL: `https://desafio-itau-api.herokuapp.com`.
 
 Segue um exemplo de um cUrl para fazer chamada ao endpoint para validar se a API está funcionando:
-* curl --location --request POST 'https://desafio-itau-api.herokuapp.com/password/validate' \
+```shell script
+ curl --location --request POST 'https://desafio-itau-api.herokuapp.com/password/validate' \
   --header 'Content-Type: application/json' \
   --data-raw '{
   "input": "Aabv#12P3O"
   }'
-  
+```  
 
-### Swagger
+## Swagger
 
 Dentro do projeto da API `desafio-itau` é possível acessar o documento Swagger da aplicação que contém as informações do endpoint implementado para esta API.
 
@@ -124,7 +126,7 @@ O arquivo swagger também poderá ser acessado através da seguinte URL a partir
 
 
 
-### Teste Interface API Web
+## Teste Interface API Web
 
 Para esta API foi criada uma interface Web simples implementada em Nextjs que pode ser usada para realizar alguns testes sobre a API que foi deployada no Heroku.
 
@@ -134,14 +136,16 @@ A interface web poderá ser acessada através da seguinte URL:
   * https://desafio-itau-6wuzi6d1h-israelprojeto27.vercel.app/
 
 
-### Postman
+## Postman
 
 Dentro do projeto, há também o arquivo JSON `DesafioItau.postman_collection.json` que possui também todas as informações de todos os endpoinst construidos nesta API.
 
 
 
 
-### Autor
+
+
+## Autor
 
 * Autor: Israel Dias Barreto
 * Email: israeldb27@gmail.com
